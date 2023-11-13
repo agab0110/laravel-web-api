@@ -11,6 +11,8 @@ Dovrebbe essere già preistallato, controllare in composer.json se c'è la voce 
 
 composer require laravel/sanctum
 
+Nel caso sia presente andare in Kernel.php, e nella voce api (riga 42) decommentare il package
+
 # Connessione al database
 Nel file .env si trovano le variabili globali per il collegamento al database, basta cambirne i valori in base al proprio database
 
