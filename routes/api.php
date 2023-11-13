@@ -20,9 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('login', [AuthController::class, 'login']);
+
 Route::middleware('auth:sanctum')->group(function () {      // protezione con il middleware auth:sanctum
     Route::prefix('v1')->group(function () {     // definizione delle routes per il gruppo di funzioni all'interno della classe TaskController
         Route::apiResource('tasks', TaskController::class);
-        Route::post('login', [AuthController::class, 'login']);
     });
 });
