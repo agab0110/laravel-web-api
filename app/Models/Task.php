@@ -9,17 +9,17 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $fillable = [     // campi che possono essere inseriti da un form
         'title',
         'completed'
     ];
 
-    protected $hidden = [
+    protected $hidden = [       // campi che verranno protetti dall'output
         'updated_at',
         'created_at'
     ];
 
-    protected $casts = [
+    protected $casts = [        // campi a cui vengono fatti dei cast per l'output
         'completed' => 'boolean'
     ];
 }

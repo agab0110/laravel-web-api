@@ -21,28 +21,28 @@ class TaskController extends Controller
         return new TaskCollection($tasks);
     }
 
-    public function show(Request $request, Task $task) {
+    public function show(Request $request, Task $task) {        // metodo per prendere un solo record, basta passare l'id e si riceverà la task desiderata
         return new TaskResource($task);
     }
 
-    public function store(StoreTaskRequest $request) {
-        $validated = $request->validated();
+    public function store(StoreTaskRequest $request) {      // metodo per inserire una nuova task
+        $validated = $request->validated();     // validazione dei campi, vedere le rules della classe "StoreTaskRequest"
 
-        $task = Task::create($validated);
-
-        return new TaskResource($task);
-    }
-
-    public function update(UpdateTaskRequest $request, Task $task) {
-        $validated = $request->validated();
-
-        $task->update($validated);
+        $task = Task::create($validated);       // "Task::create" serve a salvare nel database
 
         return new TaskResource($task);
     }
 
-    public function destroy(Request $request, Task $task) {
-        $task->delete();
+    public function update(UpdateTaskRequest $request, Task $task) {        // metodo per l'update di una task, anche qui serve solo l'id
+        $validated = $request->validated();     // validazione dei campi, vedere le rules della classe "UpdateTaskRequest"
+
+        $task->update($validated);      // aggiornamento nel database
+
+        return new TaskResource($task);
+    }
+
+    public function destroy(Request $request, Task $task) {     // metodo per l'eliminazione di una task, anche qui basta solo l'id
+        $task->delete();        // elimina la task dal database
 
         return response("Task removed", 200);
     }

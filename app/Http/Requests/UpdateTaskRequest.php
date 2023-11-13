@@ -22,8 +22,8 @@ class UpdateTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'sometimes|required|string|max:255',
-            'completed' => 'sometimes|required|boolean'
+            'title' => 'sometimes|required|string|max:255',     // il titolo non deve essere per forza presente ma nel caso dovrà essere obbligatoriamete una stringa di massimo 225 caratteri
+            'completed' => 'sometimes|required|boolean'     // il cammpo non deve essere per forza presente ma nel caso dovrà essere booleano
         ];
     }
 }

@@ -14,7 +14,7 @@ class TaskFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition(): array     // aggiunge, tramite comando, campi al database che avreanno un titolo "fake" e completed a false
     {
         return [
             'title' => $this->faker->sentence(),

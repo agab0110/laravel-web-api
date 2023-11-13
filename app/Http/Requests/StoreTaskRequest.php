@@ -22,7 +22,7 @@ class StoreTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255'
+            'title' => 'required|string|max:255'    // il titolo è richiesto come una stringa di massimo 255 caratteri
         ];
     }
 }
