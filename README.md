@@ -4,6 +4,9 @@ https://www.youtube.com/watch?v=9FJeoq5z1_Y
 # Laravel query builder package
 composer require spatie/laravel-query-builder
 
+# Package laravel per autenticazione
+composer require laravel/sanctum
+
 Questo package serve per filtrare la lista di tutte le task con la paginazione
 
 # Connessione al database
