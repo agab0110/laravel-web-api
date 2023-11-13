@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Task extends Model
 {
@@ -22,4 +23,8 @@ class Task extends Model
     protected $casts = [        // campi a cui vengono fatti dei cast per l'output
         'completed' => 'boolean'
     ];
+
+    public function creator(): BelongsTo {      // questa funzione sta ad indicare una relazione one-to-one con la tabella utenti
+        return $this->belongsTo(User::class, 'creator_id');
+    }
 }
