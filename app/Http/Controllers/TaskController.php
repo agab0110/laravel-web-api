@@ -16,6 +16,7 @@ class TaskController extends Controller
         $tasks = QueryBuilder::for(Task::class)
             ->allowedFilters('completed')   // aggiunge un filtro per completezza, da postman, alla fine dell'url, va inserito "?filter[campo da filtrare]=qualcosa
             ->defaultSort('created_at')     // fa un sort per data di creazione, mettendo un "-" prima di "created_at" il sort viene fatto nel verso opposto
+            ->allowedSorts(['title', 'completed', 'created_at'])    // fa fare un sort per i parametri specificati, basta aggiungere "?sort=parametro" alla fine dell'url, con - prima del parametro di inverte l'ordine
             ->paginate();   // pagina i risultati, in una pagina ci sono al massimo 15 record
 
         return new TaskCollection($tasks);
