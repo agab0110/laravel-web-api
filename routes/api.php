@@ -22,8 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('v1')->group(function () {     // definizione delle routes per il gruppo di funzioni all'interno della classe TaskController
     Route::apiResource('tasks', TaskController::class);
-});
-
-Route::prefix('v1')->group(function () {
     Route::post('login', [AuthController::class, 'login']);
 });
