@@ -24,7 +24,7 @@ class Task extends Model
         'completed' => 'boolean'
     ];
 
-    public function creator(): BelongsTo {      // questa funzione sta ad indicare una relazione one-to-one con la tabella utenti
+    public function creator(): BelongsTo {      // questa funzione sta ad indicare una relazione many-to-one con la tabella utenti
         return $this->belongsTo(User::class, 'creator_id');
     }
 }
