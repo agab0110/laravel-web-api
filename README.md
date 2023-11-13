@@ -2,12 +2,14 @@
 https://www.youtube.com/watch?v=9FJeoq5z1_Y
 
 # Laravel query builder package
+Questo package viene usato per filtrare la lista di tutte le task con la paginazione nella funzione index di TaskController
+
 composer require spatie/laravel-query-builder
 
 # Package laravel per autenticazione
-composer require laravel/sanctum
+Dovrebbe essere già preistallato, controllare in composer.json se c'è la voce laravel/sanctum, nel caso non ci sia scrivere:
 
-Questo package serve per filtrare la lista di tutte le task con la paginazione
+composer require laravel/sanctum
 
 # Connessione al database
 Nel file .env si trovano le variabili globali per il collegamento al database, basta cambirne i valori in base al proprio database
