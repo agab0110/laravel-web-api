@@ -19,4 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('getAllTasks', [TaskController::class, 'index']);
+Route::prefix('tasks/')->group(function (){
+    Route::get('getAllTasks', [TaskController::class, 'index']);
+});
