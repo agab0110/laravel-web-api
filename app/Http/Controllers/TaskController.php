@@ -34,4 +34,10 @@ class TaskController extends Controller
 
         return new TaskResource($task);
     }
+
+    public function destroy(Request $request, Task $task) {
+        $task->delete();
+
+        return response("Task removed", 200);
+    }
 }
