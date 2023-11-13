@@ -44,7 +44,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function task() : HasMany {      // questa funzione sta ad indicare una relazione one-to-many con la tabella utenti
+    public function tasks() : HasMany {      // questa funzione sta ad indicare una relazione one-to-many con la tabella utenti
         return $this->hasMany(Task::class, 'creator_id');
     }
 }
