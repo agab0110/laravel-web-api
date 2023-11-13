@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->boolean('completed')->default(false);
+            $table->foreignId('creator_id')->constrained('users');      // chiave esterna su users
             $table->timestamps();
         });
     }
