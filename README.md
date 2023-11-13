@@ -4,6 +4,8 @@ https://www.youtube.com/watch?v=9FJeoq5z1_Y
 # Laravel query builder package
 composer require spatie/laravel-query-builder
 
+Questo package serve per filtrare la lista di tutte le task con la paginazione
+
 # Connessione al database
 Nel file .env si trovano le variabili globali per il collegamento al database, basta cambirne i valori in base al proprio database
 
