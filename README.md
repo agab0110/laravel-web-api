@@ -17,5 +17,3 @@ Nel caso il nome del database non sia presente laravel provvederà a crearlo.
 - Per visualizzare cosa si può creare da linea di comando basta digitare: php artisan make -h
 - Nella creazione è possibile usare dei flag, questi si possono visualizzare scrivendo: php artisan make:qualcosa -h
 - Per migrare sul database si può digitare: php artisan migrate
-
-#
