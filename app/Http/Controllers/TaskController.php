@@ -8,6 +8,7 @@ use App\Http\Resources\TaskCollection;
 use App\Http\Resources\TaskResource;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class TaskController extends Controller
@@ -29,8 +30,8 @@ class TaskController extends Controller
     public function store(StoreTaskRequest $request) {      // metodo per inserire una nuova task
         $validated = $request->validated();     // validazione dei campi, vedere le rules della classe "StoreTaskRequest"
 
-        $task = Task::create($validated);       // "Task::create" serve a salvare nel database
-
+        $task = Auth::user()->tasks()->create($validated);       // metodo che serve a creare una nuova task e associarsi l'id dell'utente loggato, "Task::create" serve a salvare nel database
+                                                                 // non so perché c'è l'errore ma funziona
         return new TaskResource($task);
     }
 
