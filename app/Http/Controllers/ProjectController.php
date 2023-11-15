@@ -4,13 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Project\StoreProjectRequest;
 use App\Http\Requests\Project\UpdateProjectRequest;
+use App\Http\Resources\ProjectCollectionResource;
 use App\Http\Resources\ProjectResource;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class ProjectController extends Controller
 {
+    public function index(Request $request) {
+        $projects = QueryBuilder::for(Project::class)       // fa in modo che vengano incluse le task e pagina l'output
+                                    ->allowedIncludes('tasks')
+                                    ->paginate();
+
+        return new ProjectCollectionResource($projects);
+    }
+
     public function store(StoreProjectRequest $request) {
         $validated = $request->validated();
 
