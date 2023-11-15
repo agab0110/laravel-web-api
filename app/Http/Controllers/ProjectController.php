@@ -44,7 +44,7 @@ class ProjectController extends Controller
     }
 
     public function destroy(Request $request, Project $project) {
-        $project->delete();
+        $project->delete();     // elimina il campo nel database
 
         return response("Project deleted succesfully", 200);
     }
