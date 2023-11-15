@@ -28,11 +28,11 @@ class AuthController extends Controller
     }
 
     public function register(RegisterRequest $request) {
-        $validated = $request->validated();
+        $validated = $request->validated();     // validazione campi
 
-        $user = User::create($validated);
+        $user = User::create($validated);       // creazione nuovo utente con i campi validati
 
-        return response()->json([
+        return response()->json([       // ritorno il codice 201 con l'utente appena creato e il token
             'data' => $user,
             'access_token' => $user->createToken('api_token')->plainTextToken,
             'token_type' => 'Bearer'
