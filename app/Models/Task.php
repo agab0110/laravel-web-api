@@ -30,7 +30,7 @@ class Task extends Model
         return $this->belongsTo(User::class, 'creator_id');
     }
 
-    public function project(): BelongsTo {
+    public function project(): BelongsTo {      // utilizzando la naming convention non c'è bisogno del nome della colonna
         return $this->belongsTo(Project::class);
     }
 
