@@ -13,6 +13,10 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class ProjectController extends Controller
 {
+    public function __construct() {     // costruttore per autorizzare le richieste per la classe project
+        $this->authorizeResource(Project::class, 'project');
+    }
+
     public function index(Request $request) {
         $projects = QueryBuilder::for(Project::class)       // fa in modo che vengano incluse le task e pagina l'output
                                     ->allowedIncludes('tasks')      // include le tasks se vengono richieste dall'url
