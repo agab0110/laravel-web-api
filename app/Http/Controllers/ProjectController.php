@@ -15,7 +15,7 @@ class ProjectController extends Controller
 {
     public function index(Request $request) {
         $projects = QueryBuilder::for(Project::class)       // fa in modo che vengano incluse le task e pagina l'output
-                                    ->allowedIncludes('tasks')
+                                    ->allowedIncludes('tasks')      // include le tasks se vengono richieste dall'url
                                     ->paginate();
 
         return new ProjectCollectionResource($projects);    // qui le task non verranno visualizzate poiché non sono caricate
