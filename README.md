@@ -37,6 +37,8 @@ Copiare il tipo di token e poi il token all'interno dell'header "Authorization" 
 
 Nella registrazione si deve inserire il nome, email e password, in più, però, si deve inserire un campo aggiuntivo chiamato "password_confirmation" che serve a confermare la password come da regola di registrazione
 
+Nella chiamata index di project se si vogliono visualizzare anche le tasks si deve inserire "?include=tasks" alla fine dell'url
+
 # Tinker
 Tinker è una shell messa a disposizione da laravel per creare istanze di oggetti secondo il factory.
 Per accederci bisogna digiatare il comando "php artisan tinker".
