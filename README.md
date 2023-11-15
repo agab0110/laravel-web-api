@@ -27,7 +27,9 @@ Nel caso il nome del database non sia presente laravel provvederà a crearlo.
 - Usando "php artisan migrate:fresh si cancellano tutte le tabelle del database ricreandole secondo le migrazioni, per esempio si può usare quando si aggiorna una migrazione. Si perdono tutti i dati
 
 # Cose utili
-Per fare l'hash di una password: 'password' => static::$password ??= Hash::make('password'), 
+- Per fare l'hash di una password: 'password' => static::$password ??= Hash::make('password')
+- La naming convention fa in modo che i nomi delle colonne vengano assegnate automaticamente in base al nome della tabella.
+  Per esempio se inseriamo una chiave esterna su user con una relazione HasMany possiamo omettere il nome della colonna poiché la funzione si chiama users come la tabella
 
 # Postman
 Quando si vogliono provare le api in postman si deve inserire nell'header della chiamata il token dell'utente con cui viene fatto l'accesso, questo può essere preso facendo un login con un utente nel database, come output si avrà il token e il tipo di token.
