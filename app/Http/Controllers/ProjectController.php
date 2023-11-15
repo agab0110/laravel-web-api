@@ -13,7 +13,7 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request) {
         $validated = $request->validated();
 
-        $project = Auth::user()->projects()->create($validated);
+        $project = Auth::user()->projects()->create($validated);        // crea la relazione tra project e user
 
         return new ProjectResource($project);
     }
@@ -21,7 +21,7 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project) {
         $validated = $request->validated();
 
-        $project->update($validated);
+        $project->update($validated);       // aggiorna il campo nel database
 
         return new ProjectResource($project);
     }
