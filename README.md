@@ -32,3 +32,5 @@ Per fare l'hash di una password: 'password' => static::$password ??= Hash::make(
 # Postman
 Quando si vogliono provare le api in postman si deve inserire nell'header della chiamata il token dell'utente con cui viene fatto l'accesso, questo può essere preso facendo un login con un utente nel database, come output si avrà il token e il tipo di token.
 Copiare il tipo di token e poi il token all'interno dell'header "Authorization" (probabilmente si deve creare) e dovrebbe funzionare 
+
+Nella registrazione si deve inserire il nome, email e password, in più, però, si deve inserire un campo aggiuntivo chiamato "password_confirmed" che serve a confermare la password come da regola di registrazione
