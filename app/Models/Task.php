@@ -30,6 +30,10 @@ class Task extends Model
         return $this->belongsTo(User::class, 'creator_id');
     }
 
+    public function project(): BelongsTo {
+        return $this->belongsTo(Project::class);
+    }
+
     protected static function booted(): void {      // metodo globale per far si che si vedano solo le tasks dell'utente loggato
         static::addGlobalScope('creator', function (Builder $builder) {
             $builder->where('creator_id', Auth::id());      // non so perché da errore ma funziona
