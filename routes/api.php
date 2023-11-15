@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +27,8 @@ Route::prefix('auth')->group(function () {      // l'url sarà http://localhost:
 });
 
 Route::middleware('auth:sanctum')->group(function () {      // protezione con il middleware auth:sanctum
-    Route::prefix('v1')->group(function () {     // definizione delle routes per il gruppo di funzioni all'interno della classe TaskController
-        Route::apiResource('tasks', TaskController::class);
+    Route::prefix('v1')->group(function () {     // definizione delle routes per il gruppo di funzioni
+        Route::apiResource('tasks', TaskController::class);     // apiResource fa si che vengano riconosciute all'interno della classe le funzioni come api
+        Route::apiResource('projects', ProjectController::class);       // l'url in questo caso sarà http://localhost:8000/api/v1/(tasks o projects)/funzione
     });
 });
