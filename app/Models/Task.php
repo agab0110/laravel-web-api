@@ -14,7 +14,8 @@ class Task extends Model
 
     protected $fillable = [     // campi che possono essere inseriti da un form
         'title',
-        'completed'
+        'completed',
+        'project_id'
     ];
 
     protected $hidden = [       // campi che verranno protetti dall'output
