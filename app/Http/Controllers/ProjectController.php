@@ -18,7 +18,7 @@ class ProjectController extends Controller
                                     ->allowedIncludes('tasks')
                                     ->paginate();
 
-        return new ProjectCollectionResource($projects);
+        return new ProjectCollectionResource($projects);    // qui le task non verranno visualizzate poiché non sono caricate
     }
 
     public function store(StoreProjectRequest $request) {
@@ -30,7 +30,7 @@ class ProjectController extends Controller
     }
 
     public function show(Request $request, Project $project) {
-        return new ProjectResource($project);
+        return (new ProjectResource($project))->load('tasks');      // qui le task verranno visualizzate poiché sono caricate
     }
 
     public function update(UpdateProjectRequest $request, Project $project) {
