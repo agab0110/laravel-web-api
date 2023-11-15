@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->boolean('completed')->default(false);
             $table->foreignId('creator_id')->constrained('users');      // chiave esterna su users
+            $table->foreignId('project_id')->nullable()->constrained()->nullOnDelete();     // chiave esterta su project
             $table->timestamps();
         });
     }
