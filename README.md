@@ -36,3 +36,9 @@ Quando si vogliono provare le api in postman si deve inserire nell'header della 
 Copiare il tipo di token e poi il token all'interno dell'header "Authorization" (probabilmente si deve creare) e dovrebbe funzionare 
 
 Nella registrazione si deve inserire il nome, email e password, in più, però, si deve inserire un campo aggiuntivo chiamato "password_confirmation" che serve a confermare la password come da regola di registrazione
+
+# Tinker
+Tinker è una shell messa a disposizione da laravel per creare istanze di oggetti secondo il factory.
+Per accederci bisogna digiatare il comando "php artisan tinker".
+Per creare una nuova istanza di user, per esempio, scriviamo "$u = User::factory()->create()".
+Se non trova le classi o c'è qualche errore uscire dalla schell e usare il comando "composer dump auto-load" e poi riprovare.
