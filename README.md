@@ -28,3 +28,7 @@ Nel caso il nome del database non sia presente laravel provvederà a crearlo.
 
 # Cose utili
 Per fare l'hash di una password: 'password' => static::$password ??= Hash::make('password'), 
+
+# Postman
+Quando si vogliono provare le api in postman si deve inserire nell'header della chiamata il token dell'utente con cui viene fatto l'accesso, questo può essere preso facendo un login con un utente nel database, come output si avrà il token e il tipo di token.
+Copiare il tipo di token e poi il token all'interno dell'header "Authorization" (probabilmente si deve creare) e dovrebbe funzionare 
