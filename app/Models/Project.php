@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Project extends Model
 {
@@ -23,6 +24,10 @@ class Project extends Model
 
     public function creator(): BelongsTo {
         return $this->belongsTo(User::class, 'creator_id');
+    }
+
+    public function members(): BelongsToMany {      // funzione per la chiave esterna della relazione many-to-many tra user e project
+        return $this->belongsToMany(User::class, Member::class);
     }
 
     protected static function booted(): void {      // metodo globale per far si che si possano vedere le informazione dei project creati dell'utente loggato
