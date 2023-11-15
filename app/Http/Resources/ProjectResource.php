@@ -14,6 +14,12 @@ class ProjectResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [        // mostra le informazioni elencate sotto
+            'id' => $this->id,
+            'title' => $this->title,
+            'tasks' => TaskResource::collection($this->tasks),      // mostra una collection di task collegate al project
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at
+        ];
     }
 }
