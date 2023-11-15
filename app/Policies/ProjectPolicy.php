@@ -21,7 +21,15 @@ class ProjectPolicy
      */
     public function view(User $user, Project $project): bool
     {
-        //
+        if ($user->id === $project->creator_id) {
+            return true;
+        }
+
+        if ($user->memberships->contains($project)) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
