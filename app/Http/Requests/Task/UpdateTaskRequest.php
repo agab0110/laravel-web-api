@@ -23,7 +23,7 @@ class UpdateTaskRequest extends FormRequest
     {
         return [
             'title' => 'sometimes|required|string|max:255',     // il titolo non deve essere per forza presente ma nel caso dovrà essere obbligatoriamete una stringa di massimo 225 caratteri
-            'completed' => 'sometimes|required|boolean'     // il cammpo non deve essere per forza presente ma nel caso dovrà essere booleano
+            'completed' => 'sometimes|required|boolean'     // il campo non deve essere per forza presente ma nel caso dovrà essere booleano e non potrà essere null
         ];
     }
 }
