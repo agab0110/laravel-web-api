@@ -32,7 +32,7 @@ class Task extends Model
 
     protected static function booted(): void {      // metodo globale per far si che si vedano solo le tasks dell'utente loggato
         static::addGlobalScope('creator', function (Builder $builder) {
-            $builder->where('creator_id', Auth::id());
+            $builder->where('creator_id', Auth::id());      // non so perché da errore ma funziona
         });
     }
 }
