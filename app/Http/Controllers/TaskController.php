@@ -13,6 +13,10 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class TaskController extends Controller
 {
+    public function __construct() {     // costruttore per autorizzare con una policy le richieste per la classe task
+        $this->authorizeResource(Task::class, 'task');
+    }
+
     public function index() {
         $tasks = QueryBuilder::for(Task::class)
             ->allowedFilters('completed')   // aggiunge un filtro per completezza, da postman, alla fine dell'url, va inserito "?filter[campo da filtrare]=qualcosa
