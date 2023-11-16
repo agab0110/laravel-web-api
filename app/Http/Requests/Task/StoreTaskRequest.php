@@ -27,9 +27,7 @@ class StoreTaskRequest extends FormRequest
             'title' => 'required|string|max:255',    // il titolo è richiesto come una stringa di massimo 255 caratteri
             'project_id' => [       // questo fa in modo che l'id non può essere inserito con un id di un project non creato dall'utente loggato
                 'nullable',
-                Rule::exists('projects', 'id')->where(function ($query) {
-                    $query->where('creator_id', Auth::id());
-                })
+                Rule::in(Auth::user()->memberships->pluck('id'))
             ],
         ];
     }
