@@ -25,6 +25,7 @@ Nel caso il nome del database non sia presente laravel provvederà a crearlo.
 - Nella creazione è possibile usare dei flag, questi si possono visualizzare scrivendo: php artisan make:qualcosa -h
 - Per migrare sul database si può digitare: php artisan migrate
 - Usando "php artisan migrate:fresh si cancellano tutte le tabelle del database ricreandole secondo le migrazioni, per esempio si può usare quando si aggiorna una migrazione. Si perdono tutti i dati
+- Per avviare il programma si usa "php artisan serve", la porta assegnata sarà la 8000
 
 # Cose utili
 - Per fare l'hash di una password: 'password' => static::$password ??= Hash::make('password')
@@ -44,3 +45,8 @@ Tinker è una shell messa a disposizione da laravel per creare istanze di oggett
 Per accederci bisogna digiatare il comando "php artisan tinker".
 Per creare una nuova istanza di user, per esempio, scriviamo "$u = User::factory()->create()".
 Se non trova le classi o c'è qualche errore uscire dalla schell e usare il comando "composer dump auto-load" e poi riprovare.
+
+# Policies
+Una policy è un modo per gestire l'autorizzazione all'interno dell'applicazione, questa viene gestita anche dal token di accesso.
+
+Si possono usare al posto delle policy i gates, non presenti in questo progetto
