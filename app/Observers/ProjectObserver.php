@@ -11,7 +11,7 @@ class ProjectObserver       // permette di usare le funzioni specificate in ques
      */
     public function created(Project $project): void
     {
-        //
+        $project->members()->attach([$project->creator_id]);
     }
 
     /**
