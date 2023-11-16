@@ -25,7 +25,7 @@ class StoreTaskRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',    // il titolo è richiesto come una stringa di massimo 255 caratteri
-            'project_id' => [       // questo fa in modo che l'id non può essere inserito con un id di un project non creato dall'utente loggato
+            'project_id' => [       // questo fa in modo che l'id può essere inserito sia dal creatore che dai membri
                 'nullable',
                 Rule::in(Auth::user()->memberships->pluck('id'))
             ],
