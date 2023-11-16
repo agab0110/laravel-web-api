@@ -13,7 +13,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class ProjectController extends Controller
 {
-    public function __construct() {     // costruttore per autorizzare le richieste per la classe project
+    public function __construct() {     // costruttore per autorizzare con una policy le richieste per la classe project
         $this->authorizeResource(Project::class, 'project');
     }
 
