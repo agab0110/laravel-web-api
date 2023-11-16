@@ -18,6 +18,7 @@ class ProjectPolicy
 
     /**
      * Determine whether the user can view the model.
+     * Se l'utente è un membro di un progetto allora lo portà visualizzare
      */
     public function view(User $user, Project $project): bool
     {
@@ -26,26 +27,29 @@ class ProjectPolicy
 
     /**
      * Determine whether the user can create models.
+     * Se l'utente è loggato allora può creare progetti
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
      * Determine whether the user can update the model.
+     * Un progetto potrà essere modificato solo dal creatore
      */
     public function update(User $user, Project $project): bool
     {
-        //
+        return $user->id === $project->creator_id;
     }
 
     /**
      * Determine whether the user can delete the model.
+     * Un progetto potrà essere eliminato solo dal creatore
      */
     public function delete(User $user, Project $project): bool
     {
-        //
+        return $user->id === $project->creator_id;
     }
 
     /**
