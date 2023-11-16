@@ -30,9 +30,9 @@ class Project extends Model
         return $this->belongsToMany(User::class, Member::class);
     }
 
-    protected static function booted(): void {      // metodo globale per far si che si possano vedere le informazione dei project creati dell'utente loggato
-        static::addGlobalScope('creator', function (Builder $builder) {
-            $builder->where('creator_id', Auth::id());      // non so perché da errore ma funziona
+    protected static function booted(): void {      // metodo globale per controllare che l'id dell'utente loggato faccia parte dei members di un progetto
+        static::addGlobalScope('member', function (Builder $builder) {
+            $builder->whereRelation('members', 'user_id', Auth::id());      // non so perché da errore ma funziona
         });
     }
 }
