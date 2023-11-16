@@ -1,6 +1,12 @@
 # Link tutorial
 https://www.youtube.com/watch?v=9FJeoq5z1_Y
 
+# Il progetto
+Il progetto consiste in un Task Manager.
+Gli User creano dei Project, nei Project venogono inserite delle Task.
+Più User possono avere più Project.
+Un Project può avere più Task.
+
 # Laravel query builder package
 Questo package viene usato per filtrare la lista di tutte le task con la paginazione nella funzione index di TaskController
 
