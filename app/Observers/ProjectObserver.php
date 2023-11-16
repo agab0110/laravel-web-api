@@ -4,6 +4,8 @@ namespace App\Observers;
 
 use App\Models\Project;
 
+// queste classi andranno poi richiamate in EventServiceProvider.php
+
 class ProjectObserver       // permette di usare le funzioni specificate in questa classe dato un determinato evento all'interno del model
 {
     /**
