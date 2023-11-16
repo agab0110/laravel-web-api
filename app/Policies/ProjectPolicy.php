@@ -57,7 +57,7 @@ class ProjectPolicy
      */
     public function restore(User $user, Project $project): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -65,6 +65,6 @@ class ProjectPolicy
      */
     public function forceDelete(User $user, Project $project): bool
     {
-        //
+        return false;
     }
 }
