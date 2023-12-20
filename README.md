@@ -38,10 +38,9 @@ Nel caso il nome del database non sia presente laravel provvederà a crearlo.
 - La naming convention fa in modo che i nomi delle colonne vengano assegnate automaticamente in base al nome della tabella.
   Per esempio se inseriamo una chiave esterna su user con una relazione HasMany possiamo omettere il nome della colonna poiché la funzione si chiama users come la tabella
 - Quando si clona una repository si devono scrivere i seguenti comandi da shell:
-- - composer install
-    composer install,
-    cp .env.example .env
-    php artisan key:generate
+  - composer install
+  - cp .env.example .env
+  - php artisan key:generate
 
 # Postman
 Quando si vogliono provare le api in postman si deve inserire nell'header della chiamata il token dell'utente con cui viene fatto l'accesso, questo può essere preso facendo un login con un utente nel database, come output si avrà il token e il tipo di token.
